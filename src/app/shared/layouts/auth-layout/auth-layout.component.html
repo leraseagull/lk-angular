@@ -1,0 +1,20 @@
+<nav>
+  <div class="nav-wrapper #546e7a blue-grey darken-1 z-depth-1">
+      <a routerLink="/" class="brand-logo">Home</a>
+      <div>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li >
+            <a routerLinkActive="active" routerLink="login">Вход</a>
+          </li>
+          <li >
+            <a routerLinkActive="active" routerLink="register">Регистрация</a>
+          </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="auth-block">
+    <router-outlet></router-outlet>
+</div>
+

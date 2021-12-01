@@ -1,0 +1,24 @@
+<form class="card" [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+  <div class="card-content">
+    <span class="card-title">Создать аккаунт</span>
+    <div class="input-field">
+      <input id="email" type="email" formControlName="email">
+      <label for="email">Email:</label>
+      <span *ngIf="!email.valid && (email.touched || userSubmitted)" class="text-helper red-text">
+        <span *ngIf="email.hasError('required')">Поле Email не может быть пустым</span>
+        <span *ngIf="email.hasError('email')">Введите корректный Email адрес</span>
+      </span>
+    </div>
+    <div class="input-field">
+      <input id="password" type="password" formControlName="password">
+      <label for="password">Пароль:</label>
+      <span *ngIf="!password.valid && (password.touched || userSubmitted)" class="text-helper red-text">
+        <span *ngIf="password.errors['required']">Поле Пароль не может быть пустым</span>
+        <span *ngIf="password.errors['minLength']">Пароль должен быть не менее 6 знаков</span>
+      </span>
+    </div>
+  </div>
+  <div class="card-action">
+    <button [disabled]="registrationForm.invalid" class="modal-action btn waves-effect">Создать</button>
+  </div>
+</form>
